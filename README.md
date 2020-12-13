@@ -13,9 +13,19 @@
 3. [Mapping and Localization](#Mapping-and-Localization)
 4. [Navigation](#Navigation)
 5. [Follow waypoints](#Follow-waypoints)
-6. [Conclusion](#Conclusion)
+6. [Conclusion](#Conclusion)  
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Introduction
+
+First of all, we are proficient in robot control methods through some basic courses. We need to know how robots build maps, locate, navigate and move autonomously between different waypoints. The main content of the project is to use Turtlebot3 Robot to complete the following challenges:  
+
+- Create a script that moves the robot around with simple /cmd_vel publishing. See the range of movement of this new robot model.  
+- Create the mapping launches, and map the whole environment. You have to finish with a clean map of the full cafeteria.  
+- Setup the launch to be able to localise the Turtlebot3 robot.  
+- Set up the move base system so that you can publish a goal to move_base and Turtlebot3 can reach that goal without colliding with obstacles.  
+- Create a program that allows the Turtlebot3 to navigate within the environment following a set of waypoints. The 3 following spots are mandatory  
 
 ## Move robot  
 
@@ -224,6 +234,11 @@ It is the waypoint server that stores the destination point and route informatio
 
 Now, the robot starts to move between fixed points, the following is the demo video link:  
 
+
+
+## Conclusion
+
+We completed the robot simulation with Gazebo on The construt platform. In this project, we need to complete the five tasks of robot movement, map building, positioning, navigation, and waypoint navigation. The simulation environment we use is a Costa Coffe in Barcelona. In this environment, there are many obstacles, which makes the positioning and navigation of the robot difficult. But due to platform errors, our actual simulation environment is relatively simple. Through this project, we have mastered some basic knowledge about robots, especially the use of gmapping, amcl and move_base packages. The construct platform can very well allow us to complete the knowledge of learning robots without actual robots and space, and provide different simulation environments and different types of robots in each course, which can better help us Master the operation of different robots in different environments. But The construct platform also has some problems. Because it is a simulation platform, the platform will have problems that it cannot connect to the simulation environment and cannot log in, and when the network speed is not good, the simulation of the robot will be delayed, resulting in errors in the simulation results of the robot.
 
 
 
