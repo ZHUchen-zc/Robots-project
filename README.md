@@ -70,6 +70,7 @@ Then we can proceed to start this launch file. We need to launch RViz in order t
 <p align="center">  
    <img src = "source/8.png" width = 600>
 </p >  
+
 Our next step is to save this map. Another of the packages available in the ROS Navigation Stack is the map_server package. This package provides the map_saver node, which allows us to access the map data from a ROS Service, and save it into a file. It will get the map data from the map topic, and write it out into 2 files, name_of_map.pgm and name_of_map.yaml. The PGM file is the one that contains the occupancy data of the map, and the YAML file contains some metadata about the map, like the map dimensions and resolution, or the path to the PGM file.  
 
 <p align="center">  
@@ -77,6 +78,7 @@ Our next step is to save this map. Another of the packages available in the ROS 
 </p >  
 
 ### Localization  
+
 And after that, the next thing we'll need to do is to be able to localize the robot into that map. For that, we are going to use the amcl node from the Navigation Stack.  
 The AMCL (Adaptive Monte Carlo Localization) package provides the amcl node, which uses the MCL system in order to track the localization of a robot moving in a 2D space. This node subscribes to the data of the laser, the laser-based map, and the transformations of the robot, and publishes its estimated position in the map. On startup, the amcl node initializes its particle filter according to the parameters provided.  
 We need to create a new launch file in order to start the localization node.  
