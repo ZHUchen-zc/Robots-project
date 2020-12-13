@@ -16,8 +16,61 @@
 6. [Conclusion](#Conclusion)
 
 ## Introduction
-## Move robot
+
+## Move robot  
+
+The topic we used in order to control the velocities of the robot is /cmd_vel. This topic uses the geometry_msgs/Twist message. And this is the type of message that we will need to send to the topic to control the robot. The message contains 2 vectors: one for the linear velocities, and the other one for the angular velocities. Each of these vectors has its corresponding component in x, y, and z. However, what we need to take care of is only the linear x and angular z components, the ones that have an effect on a differential drive robot.
+- Set a topic of /cmd_vel and movement speed and  angular speed  
+```
+def __init__(self):
+        self._cmd_vel_pub = rospy.Publisher('/cmd_vel', Twist, queue_size=1)
+        self._twist_object = Twist()
+        self.linearspeed = 0.3
+        self.angularspeed = 0.5
+```  
+- Set the speed of movement in each direction  
+```
+def move_robot(self, direction):
+        if direction == "forwards":
+            self._twist_object.linear.x = self.linearspeed
+            self._twist_object.angular.z = 0.0
+        elif direction == "right":
+            self._twist_object.linear.x = 0.0
+            self._twist_object.angular.z = -self.angularspeed
+        elif direction == "left":
+            self._twist_object.linear.x = 0.0
+            self._twist_object.angular.z = self.angularspeed
+        elif direction == "backwards":
+            self._twist_object.linear.x = -self.linearspeed
+            self._twist_object.angular.z = 0.0
+        elif direction == "stop":
+            self._twist_object.linear.x = 0.0
+            self._twist_object.angular.z = 0.0
+        else:
+            pass
+        
+        self._cmd_vel_pub.publish(self._twist_object)
+```  
+
 ## Mapping and Localization
+First of all, we need to create a new package where we will put all the files related to navigation. Inside this new package, we need to create 2 new directories, launch and param. Then we need to create a launch file in order to start the slam_gmapping node.  
+- Before calling the map program, we first need to run the robot control program:
+```roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch```  
+- Call robot and gmapping in the map launch file
+```  
+<!-- Turtlebot3 -->
+  <include file="$(find turtlebot3_bringup)/launch/turtlebot3_remote.launch" />
+
+  <!-- Gmapping -->
+  <node pkg="gmapping" type="slam_gmapping" name="turtlebot3_slam_gmapping" output="screen">
+```  
+Then we can proceed to start this launch file. We need to launch RViz in order to be able to visualize the mapping process. Afterward, we can start moving the robot around the environment in order to generate a full map. We end up with this:  
+
+<p align="center">  
+   <img src = "source/7.png" width = 400>
+</p >
+
+
 ## Navigation
 In order to achieve autonomous navigation of the robot, we need to use a navigation stack. The navigation stack is a set of ROS nodes and algorithms that are used to automatically move the robot from one point to another, thereby avoiding all obstacles that the robot may encounter.  
 
@@ -129,7 +182,7 @@ It is the waypoint server that stores the destination point and route informatio
 - After launching follow_waypoints, we use 2D Pose Estimate to determine the location of each target point，Note that we need to add a PoseArray element located in the theme/waypoints and change its name to WayPoints. It will display all the waypoints we have set from now on.  
 
 <p align="center">  
-   <img src = "source/5.png" width = 400>
+   <img src = "source/5.png" width = 200>
 </p >  
 - Publishing in the path_ready topic, and then it will start sending the waypoints we created to the move_base node with the message type std_msgs/Empty. To start the path_ready topic, we execute:
 ```rostopic pub /path_ready std_msgs/Empty -1```  
