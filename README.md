@@ -113,7 +113,47 @@ When the node receives the target pose, it links to components such as global pl
 Turtlebot3 is now able to navigate to different locations in the environment and follow a safe path without any obstacle collisions. Below is the demo video:
 
 
+## Follow waypoints  
+
+If you want to realize that the robot can move between the set fixed waypoints, you need to use the follow_waypoints package. The follow_waypoints package uses actionlib to send goals to move_base to realize autonomous navigation of the robot.  
+The following table is the topic information that follow_waypoints needs to use:  
+<p align="center">  
+   <img src = "source/4.png" width = 800>
+</p >  
+
+It is the waypoint server that stores the destination point and route information in follow_waypoints. The initialization pose topic used to initialize the robot will forward the information to the waypoint server (amcl and follow_waypoints subscribe to this topic), and the message type is geometry_msgs / PoseWithCovarianceStamped. The waypoint server will store all waypoints and routes, and then provide them to the move_base node to start browsing all specified targets.  
+- First we need to download the follow_waypoints package from Github:  
+```gitclone https://github.com/danielsnider/follow_waypoints.git```  
+- Before starting to launch follow_waypoints, you first need to launch the robot navigation program.  
+```roslaunch <navigation package> < launch file.launch>```  
+- After launching follow_waypoints, we use 2D Pose Estimate to determine the location of each target point，Note that we need to add a PoseArray element located in the theme/waypoints and change its name to WayPoints. It will display all the waypoints we have set from now on.  
+
+<p align="center">  
+   <img src = "source/5.png" width = 800>
+</p >  
 
 
 
-## Follow waypoints
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
