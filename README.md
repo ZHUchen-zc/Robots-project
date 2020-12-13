@@ -216,6 +216,7 @@ Turtlebot3 is now able to navigate to different locations in the environment and
 
 If you want to realize that the robot can move between the set fixed waypoints, you need to use the follow_waypoints package. The follow_waypoints package uses actionlib to send goals to move_base to realize autonomous navigation of the robot.  
 The following table is the topic information that follow_waypoints needs to use:  
+
 <p align="center">  
    <img src = "source/4.png" width = 800>
 </p >  
@@ -229,8 +230,9 @@ It is the waypoint server that stores the destination point and route informatio
 
 <p align="center">  
    <img src = "source/5.png" width = 200>
-</p >   
-- Publishing in the path_ready topic, and then it will start sending the waypoints we created to the move_base node with the message type std_msgs/Empty. To start the path_ready topic, we execute:
+</p > 
+
+- Publishing in the path_ready topic, and then it will start sending the waypoints we created to the move_base node with the message type std_msgs/Empty. To start the path_ready topic, we execute:  
 ```rostopic pub /path_ready std_msgs/Empty -1```  
 
 Now, the robot starts to move between fixed points, the following is the demo video link:  
