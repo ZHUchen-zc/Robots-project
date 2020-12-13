@@ -212,7 +212,7 @@ When the node receives the target pose, it links to components such as global pl
 Turtlebot3 is now able to navigate to different locations in the environment and follow a safe path without any obstacle collisions. Below is the demo video:  
 
 <p align="center">
-    https://www.loom.com/share/371bdcc391644447821d75b8f7618a67
+    https://www.loom.com/share/cb532c68fe7045049256a3f94e8591c6
   </p>
 
 
@@ -241,7 +241,9 @@ It is the waypoint server that stores the destination point and route informatio
 
 Now, the robot starts to move between fixed points, the following is the demo video link:  
 
-
+<p align="center">
+    https://www.loom.com/share/349588f17d89480584507c2960ca1556
+  </p>
 
 ## Conclusion
 
