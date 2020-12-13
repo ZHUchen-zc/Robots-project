@@ -47,8 +47,8 @@ dwa_local_planner: The DWA local planner provides an implementation of the Dynam
 <p align="center">
         <p align = "center">
         <img  src = "source/global.png" width=400" width=400>
-           <img  src = "source/local.png" width=400> <br>
-        <em> 2D Global map&Local map</em>  
+           <img  src = "source/local.png" width=400>
+        <em> Global map&Local map</em>  
                                      
 First, we use the roslaunch command to load the navigation program:  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```roslaunch microproject1 start_navigation.alunch```  
