@@ -129,9 +129,12 @@ It is the waypoint server that stores the destination point and route informatio
 - After launching follow_waypoints, we use 2D Pose Estimate to determine the location of each target point，Note that we need to add a PoseArray element located in the theme/waypoints and change its name to WayPoints. It will display all the waypoints we have set from now on.  
 
 <p align="center">  
-   <img src = "source/5.png" width = 800>
+   <img src = "source/5.png" width = 400>
 </p >  
+- Publishing in the path_ready topic, and then it will start sending the waypoints we created to the move_base node with the message type std_msgs/Empty. To start the path_ready topic, we execute:
+```rostopic pub /path_ready std_msgs/Empty -1```  
 
+Now, the robot starts to move between fixed points, the following is the demo video link:
 
 
 
