@@ -68,6 +68,8 @@ Map Display (Costmaps)
 Path Displays (Plans)
 2D Tools
 ```
+For the map ,we need to set the topic to ```/move_base/global_costmap/costmap``` to visualize the global cost map and change the topic to ```/move_base/local_costmap/costmap``` to visualize the local costmap.For the path,we need to set the topic to ```/move_base/NavfnROS/plan``` in order to visualize the global plan and change the topic to ```/move_base/DWAPlannerROS/local_plan``` in order to visualize the local plan. Next we need to use the 2D Pose Estimate tool and 2D Nav Goal to set the initial position and goal.  
+When the goal is set, the message will be sent to the ```/move_base/goal``` topic of its Action Server to send the pose goal to the ```move_base``` node. When the node receives the goal pose, it links to components such as global planner, local planner, recovery behavior and cost graph, and generates output, which is a speed command, and the message type is ```geometry_msgs/Twist```, and Send it to the ```/cmd_vel``` topic to move the robot.  
 
 
 
