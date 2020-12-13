@@ -53,14 +53,21 @@ The following is an introduction to each topic called in the launch file:
 ```<arg name="map_file" default="$(find microproject1)/maps/my_map.yaml"/>```  
 - Call related topics and required documents：
 ```
-<rosparam file="$(find microproject1)/param/costmap_common_params_burger.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find microproject1)/param/costmap_common_params_burger.yaml" command="load" ns="global_costmap" />
     <rosparam file="$(find microproject1)/param/costmap_common_params_burger.yaml" command="load" ns="local_costmap" />
     <rosparam file="$(find microproject1)/param/local_costmap_params.yaml" command="load" />
     <rosparam file="$(find microproject1)/param/global_costmap_params.yaml" command="load" />
     <rosparam file="$(find microproject1)/param/move_base_params.yaml" command="load" />
     <rosparam file="$(find microproject1)/param/dwa_local_planner_params.yaml" command="load" />
+```  
+In the dwa_local_planner_params.yaml folder, we can control the robot's moving speed and rotation speed by changing the following parameters:  
+```/acc_lim_x ,/acc_lim_th ,/max_trans_vel ,/min_trans_vel,/max_vel_x ,/min_vel_x ,/max_rot_vel,/min_rot_vel```  
+After starting Rviz, in order to correctly navigate the robot, we basically need to use 3 elements of RViz:   
 ```
-
+Map Display (Costmaps)
+Path Displays (Plans)
+2D Tools
+```
 
 
 
