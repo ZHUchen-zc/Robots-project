@@ -48,9 +48,16 @@ First, we use the roslaunch command to load the navigation program:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```roslaunch microproject1 start_navigation.alunch```  
 The following is an introduction to each topic called in the launch file:  
 - Load the robot model:  
-```<arg name="model" default="burger" doc="model type [burger, waffle]"/>```
-
-
+```<arg name="model" default="burger" doc="model type [burger, waffle]"/>```  
+- Call the map we have created before：
+```<arg name="map_file" default="$(find microproject1)/maps/my_map.yaml"/>```  
+- Call related topics and required documents：
+```<rosparam file="$(find microproject1)/param/costmap_common_params_burger.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find microproject1)/param/costmap_common_params_burger.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find microproject1)/param/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find microproject1)/param/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find microproject1)/param/move_base_params.yaml" command="load" />
+    <rosparam file="$(find microproject1)/param/dwa_local_planner_params.yaml" command="load" />```
 
 
 
