@@ -46,8 +46,8 @@ dwa_local_planner: The DWA local planner provides an implementation of the Dynam
 
 <p align="center">
         <p align = "center">
-        <img  src = "source/global.png" width=400" width=400>  
-           <img  src = "source/local.png" width=400><br>
+        <img  src = "source/global.png" width=400" width=600>  
+           <img  src = "source/local.png" width=600><br>
         <em> Global map&Local map</em>  
                                      
 First, we use the roslaunch command to load the navigation program:  
