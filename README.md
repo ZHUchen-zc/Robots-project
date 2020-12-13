@@ -101,7 +101,7 @@ goal.target_pose.pose.orientation.w = 0.66
 When the node receives the target pose, it links to components such as global planner, local planner, recovery behavior, and cost graph, and generates output, which is a speed command, and the message type is geometry_msgs/Twist, and Send it to the /cmd_vel topic to move the robot.  
 - create the connection to the action server:  
 ```client = actionlib.SimpleActionClient('/move_base', MoveBaseAction)```  
--sends the goal to the action server, specifying which feedback function to call when feedback received:  
+- sends the goal to the action server, specifying which feedback function to call when feedback received:  
 ```client.send_goal(goal, feedback_cb=feedback_callback)```  
 
 Turtlebot3 is now able to navigate to different locations in the environment and follow a safe path without any obstacle collisions. Below is the demo video:
