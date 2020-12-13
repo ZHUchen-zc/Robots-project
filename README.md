@@ -34,7 +34,7 @@ In order to realize the path planning of the robot, we need to use the 2D Nav ta
 The move_base node implements SimpleActionServer and receives target information with geometry_msgs/PoseStamped messages. The following table describes the description of some topics subscribed and published by the move_base node.  
 
 <p align="center">  
-   <img src = "source/movebase topic.png" width = 600>
+   <img src = "source/movebase topic.png" width = 900>
 </p >  
 
 
