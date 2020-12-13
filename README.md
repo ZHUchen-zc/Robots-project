@@ -74,9 +74,16 @@ When the goal is set, the message will be sent to the ```/move_base/goal``` topi
 
  <p align="center">
         <p align = "center">
-        <img  src = "source/1.png" width=400" width=400><>
+        <img  src = "source/1.png" width=400" width=400>
            <img  src = "source/2.png" width=400> <br>
-        <em> 2D Pose Estimate&2D Nav Goal</em>
+        <em> 2D Pose Estimate&2D Nav Goal</em>  
+ 
+In the second way, we can send the target through the following command line instead of using 2D navigation target:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```rostopic pub /move_base/goal move_base_msgs/MoveBaseActionGoal```  
+
+<p align="center">  
+   <img src = "source/3.png" width = 900>
+</p >   
 
 
 
