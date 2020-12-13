@@ -28,7 +28,13 @@ In order to achieve autonomous navigation of the robot, we need to use a navigat
 In order to realize the path planning of the robot, we need to use the 2D Nav target tool of the mobile robot, costmap, and calculate the trajectory. In order to achieve these goals, we need to use the move_base package. The move_base package contains the move_base node.  The move_base node is one of the major elements in the ROS Navigation Stack, since it links all of the elements that take place in the Navigation process. As shown below:  
 
 <p align="center">  
-   <img src = "source/move_base.png" width = 800>
+   <img src = "source/move_base.png" width = 400>
+</p >  
+
+The move_base node implements SimpleActionServer and receives target information with geometry_msgs/PoseStamped messages. The following table describes the description of some topics subscribed and published by the move_base node.  
+
+<p align="center">  
+   <img src = "source/movebase topic.png" width = 600>
 </p >  
 
 
