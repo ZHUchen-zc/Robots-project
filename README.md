@@ -44,6 +44,12 @@ If we need the robot to avoid obstacles to reach the designated place, we also n
 - **Local Costmap:** The local planner uses the local cost map to calculate the local plan, which is created directly based on the robot's sensor readings.
 dwa_local_planner: The DWA local planner provides an implementation of the Dynamic Window Approach algorithm.  
 
+<p align="center">
+        <p align = "center">
+        <img  src = "source/global.png" width=400" width=400>
+           <img  src = "source/local.png" width=400> <br>
+        <em> 2D Global map&Local map</em>  
+                                     
 First, we use the roslaunch command to load the navigation program:  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```roslaunch microproject1 start_navigation.alunch```  
 The following is an introduction to each topic called in the launch file:  
