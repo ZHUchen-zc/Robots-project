@@ -68,7 +68,7 @@ First of all, we need to create a new package where we will put all the files re
 Then we can proceed to start this launch file. We need to launch RViz in order to be able to visualize the mapping process. Afterward, we can start moving the robot around the environment in order to generate a full map. We end up with this:  
 
 <p align="center">  
-   <img src = "source/7.png" width = 400>
+   <img src = "source/8.png" width = 600>
 </p >  
 Our next step is to save this map. Another of the packages available in the ROS Navigation Stack is the map_server package. This package provides the map_saver node, which allows us to access the map data from a ROS Service, and save it into a file. It will get the map data from the map topic, and write it out into 2 files, name_of_map.pgm and name_of_map.yaml. The PGM file is the one that contains the occupancy data of the map, and the YAML file contains some metadata about the map, like the map dimensions and resolution, or the path to the PGM file.  
 
@@ -96,10 +96,15 @@ We need to create a new launch file in order to start the localization node.
     - resample_interval   
     - transform_tolerance   
     - gui_publish_rate   
+Then we can launch RViz in order to be able to visualize the localization process. We end up with this:  
 
+<p align="center">  
+   <img src = "source/7.png" width = 400>
+</p > 
 
 
 ## Navigation
+
 In order to achieve autonomous navigation of the robot, we need to use a navigation stack. The navigation stack is a set of ROS nodes and algorithms that are used to automatically move the robot from one point to another, thereby avoiding all obstacles that the robot may encounter.  
 
 <p align="center">  
