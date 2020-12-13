@@ -13,7 +13,8 @@
 3. [Mapping and Localization](#Mapping-and-Localization)
 4. [Navigation](#Navigation)
 5. [Follow waypoints](#Follow-waypoints)
-6. [Conclusion](#Conclusion)  
+6. [Conclusion](#Conclusion) 
+7. [References](#References) 
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -238,8 +239,13 @@ Now, the robot starts to move between fixed points, the following is the demo vi
 
 ## Conclusion
 
-We completed the robot simulation with Gazebo on The construt platform. In this project, we need to complete the five tasks of robot movement, map building, positioning, navigation, and waypoint navigation. The simulation environment we use is a Costa Coffe in Barcelona. In this environment, there are many obstacles, which makes the positioning and navigation of the robot difficult. But due to platform errors, our actual simulation environment is relatively simple. Through this project, we have mastered some basic knowledge about robots, especially the use of gmapping, amcl and move_base packages. The construct platform can very well allow us to complete the knowledge of learning robots without actual robots and space, and provide different simulation environments and different types of robots in each course, which can better help us Master the operation of different robots in different environments. But The construct platform also has some problems. Because it is a simulation platform, the platform will have problems that it cannot connect to the simulation environment and cannot log in, and when the network speed is not good, the simulation of the robot will be delayed, resulting in errors in the simulation results of the robot.
+We completed the robot simulation with Gazebo on The construt platform. In this project, we need to complete the five tasks of robot movement, map building, positioning, navigation, and waypoint navigation. The simulation environment we use is a Costa Coffe in Barcelona. In this environment, there are many obstacles, which makes the positioning and navigation of the robot difficult. But due to platform errors, our actual simulation environment is relatively simple. Through this project, we have mastered some basic knowledge about robots, especially the use of gmapping, amcl and move_base packages. The construct platform can very well allow us to complete the knowledge of learning robots without actual robots and space, and provide different simulation environments and different types of robots in each course, which can better help us Master the operation of different robots in different environments. But The construct platform also has some problems. Because it is a simulation platform, the platform will have problems that it cannot connect to the simulation environment and cannot log in, and when the network speed is not good, the simulation of the robot will be delayed, resulting in errors in the simulation results of the robot.  
 
+## References
+
+- [The Construct Platform](http://theconstructsim.com)  
+- [WIKI ROS](http://wiki.ros.org/)  
+- [Latest Course Support](https://get-help.robotigniteacademy.com)  
 
 
 
