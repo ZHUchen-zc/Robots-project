@@ -82,10 +82,29 @@ In the second way, we can send the target through the following command line ins
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```rostopic pub /move_base/goal move_base_msgs/MoveBaseActionGoal```  
 
 <p align="center">  
-   <img src = "source/3.png" width = 900>
-</p >   
+   <img src = "source/3.png" width = 700>
+</p >  
 
+The third way is to send the gesture goal to the move_base node directly in the program by sending a message to the /move_base/goal topic of its Action Server.
+```
+# creates a goal to send to the action server
+goal = MoveBaseGoal()
+goal.target_pose.header.frame_id = 'map'
+goal.target_pose.pose.position.x = 1.16
+goal.target_pose.pose.position.y = -4.76
+goal.target_pose.pose.position.z = 0.0
+goal.target_pose.pose.orientation.x = 0.0
+goal.target_pose.pose.orientation.y = 0.0
+goal.target_pose.pose.orientation.z = 0.75
+goal.target_pose.pose.orientation.w = 0.66
+```  
+When the node receives the target pose, it links to components such as global planner, local planner, recovery behavior, and cost graph, and generates output, which is a speed command, and the message type is geometry_msgs/Twist, and Send it to the /cmd_vel topic to move the robot.  
+- create the connection to the action server:  
+```client = actionlib.SimpleActionClient('/move_base', MoveBaseAction)```
+-sends the goal to the action server, specifying which feedback function to call when feedback received:  
+```client.send_goal(goal, feedback_cb=feedback_callback)```  
 
+Turtlebot3 is now able to navigate to different locations in the environment and follow a safe path without any obstacle collisions. Below is the demo video:
 
 
 
