@@ -209,7 +209,11 @@ When the node receives the target pose, it links to components such as global pl
 - sends the goal to the action server, specifying which feedback function to call when feedback received:  
 ```client.send_goal(goal, feedback_cb=feedback_callback)```  
 
-Turtlebot3 is now able to navigate to different locations in the environment and follow a safe path without any obstacle collisions. Below is the demo video:
+Turtlebot3 is now able to navigate to different locations in the environment and follow a safe path without any obstacle collisions. Below is the demo video:  
+
+<p align="center">
+    https://www.loom.com/share/371bdcc391644447821d75b8f7618a67
+  </p>
 
 
 ## Follow waypoints  
