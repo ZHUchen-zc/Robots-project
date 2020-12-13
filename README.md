@@ -53,6 +53,7 @@ def move_robot(self, direction):
 ```  
 
 ## Mapping and Localization
+### Mapping
 First of all, we need to create a new package where we will put all the files related to navigation. Inside this new package, we need to create 2 new directories, launch and param. Then we need to create a launch file in order to start the slam_gmapping node.  
 - Before calling the map program, we first need to run the robot control program:
 ```roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch```  
@@ -68,7 +69,15 @@ Then we can proceed to start this launch file. We need to launch RViz in order t
 
 <p align="center">  
    <img src = "source/7.png" width = 400>
-</p >
+</p >  
+Our next step is to save this map. Another of the packages available in the ROS Navigation Stack is the map_server package. This package provides the map_saver node, which allows us to access the map data from a ROS Service, and save it into a file. It will get the map data from the map topic, and write it out into 2 files, name_of_map.pgm and name_of_map.yaml. The PGM file is the one that contains the occupancy data of the map, and the YAML file contains some metadata about the map, like the map dimensions and resolution, or the path to the PGM file.  
+
+<p align="center">  
+   <img src = "source/my_map.jpg" width = 700>
+</p >   
+### Localizing  
+
+
 
 
 ## Navigation
