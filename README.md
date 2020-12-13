@@ -57,7 +57,8 @@ The following is an introduction to each topic called in the launch file:
     <rosparam file="$(find microproject1)/param/local_costmap_params.yaml" command="load" />
     <rosparam file="$(find microproject1)/param/global_costmap_params.yaml" command="load" />
     <rosparam file="$(find microproject1)/param/move_base_params.yaml" command="load" />
-    <rosparam file="$(find microproject1)/param/dwa_local_planner_params.yaml" command="load" />```
+    <rosparam file="$(find microproject1)/param/dwa_local_planner_params.yaml" command="load" />
+    ```
 
 
 
