@@ -74,7 +74,7 @@ When the goal is set, the message will be sent to the ```/move_base/goal``` topi
 
  <p align="center">
         <p align = "center">
-        <img  src = ""source/1.png" width=400" width=400> 
+        <img  src = "source/1.png" width=400" width=400><>
            <img  src = "source/2.png" width=400> <br>
         <em> 2D Pose Estimate&2D Nav Goal</em>
 
