@@ -73,8 +73,8 @@ For the map ,we need to set the topic to ```/move_base/global_costmap/costmap```
 When the goal is set, the message will be sent to the ```/move_base/goal``` topic of its Action Server to send the pose goal to the ```move_base``` node. When the node receives the goal pose, it links to components such as global planner, local planner, recovery behavior and cost graph, and generates output, which is a speed command, and the message type is ```geometry_msgs/Twist```, and Send it to the ```/cmd_vel``` topic to move the robot.  
 
  <p align="center">
-     <img src = "source/1.png" width=60> </a>
-      <img src = "source/2.png" width=60>
+     <img src = "source/1.png" width=400> </a>
+      <img src = "source/2.png" width=400>
   </p>  
 
 
