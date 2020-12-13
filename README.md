@@ -134,7 +134,8 @@ It is the waypoint server that stores the destination point and route informatio
 - Publishing in the path_ready topic, and then it will start sending the waypoints we created to the move_base node with the message type std_msgs/Empty. To start the path_ready topic, we execute:
 ```rostopic pub /path_ready std_msgs/Empty -1```  
 
-Now, the robot starts to move between fixed points, the following is the demo video link:
+Now, the robot starts to move between fixed points, the following is the demo video link:  
+
 
 
 
