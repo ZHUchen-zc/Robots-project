@@ -74,8 +74,12 @@ Our next step is to save this map. Another of the packages available in the ROS 
 
 <p align="center">  
    <img src = "source/my_map.jpg" width = 700>
-</p >   
+</p >  
+
 ### Localizing  
+And after that, the next thing we'll need to do is to be able to localize the robot into that map. For that, we are going to use the amcl node from the Navigation Stack.  
+The AMCL (Adaptive Monte Carlo Localization) package provides the amcl node, which uses the MCL system in order to track the localization of a robot moving in a 2D space. This node subscribes to the data of the laser, the laser-based map, and the transformations of the robot, and publishes its estimated position in the map. On startup, the amcl node initializes its particle filter according to the parameters provided.  
+We need to create a new launch file in order to start the localization node.
 
 
 
