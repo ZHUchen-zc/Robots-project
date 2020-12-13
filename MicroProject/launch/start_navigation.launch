@@ -5,12 +5,12 @@
   <!-- <include file="$(find turtlebot3_bringup)/launch/turtlebot3_remote.launch" /> -->
 
   <!-- Map server -->
-  <arg name="map_file" default="$(find MicroProject)/maps/my_map.yaml"/>
+  <arg name="map_file" default="$(find microproject1)/maps/my_map.yaml"/>
   <!-- <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)">
   </node> -->
 
   <!-- AMCL -->
-  <include file="$(find MicroProject)/launch/start_localization.launch"/>
+  <include file="$(find microproject1)/launch/start_localization.launch"/>
 
   <!-- move_base -->
   <arg name="cmd_vel_topic" default="/cmd_vel" />
@@ -18,12 +18,12 @@
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
     <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" />
 
-    <rosparam file="$(find MicroProject)/param/costmap_common_params_burger.yaml" command="load" ns="global_costmap" />
-    <rosparam file="$(find MicroProject)/param/costmap_common_params_burger.yaml" command="load" ns="local_costmap" />
-    <rosparam file="$(find MicroProject)/param/local_costmap_params.yaml" command="load" />
-    <rosparam file="$(find MicroProject)/param/global_costmap_params.yaml" command="load" />
-    <rosparam file="$(find MicroProject)/param/move_base_params.yaml" command="load" />
-    <rosparam file="$(find MicroProject)/param/dwa_local_planner_params.yaml" command="load" />
+    <rosparam file="$(find microproject1)/param/costmap_common_params_burger.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find microproject1)/param/costmap_common_params_burger.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find microproject1)/param/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find microproject1)/param/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find microproject1)/param/move_base_params.yaml" command="load" />
+    <rosparam file="$(find microproject1)/param/dwa_local_planner_params.yaml" command="load" />
 
     <remap from="cmd_vel" to="$(arg cmd_vel_topic)"/>
     <remap from="odom" to="$(arg odom_topic)"/>
